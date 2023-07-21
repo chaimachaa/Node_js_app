@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
- name: test-app
+ name: node_js_app
 spec: 
  replicas: 2
  strategy: 
   type: RollingUpdate 
  selector: 
   matchLabels: 
-   app: test-app 
+   app: node_js_app
  template: 
    metadata: 
     labels: 
-     app: test-app 
+     app: node_js_app
      env: prod 
    spec: 
     containers: 
-    - name: test-app 
-      image: chaimakh/test-app:latest
+    - name: node_js_app
+      image: chaimakh/node_js_app:latest
